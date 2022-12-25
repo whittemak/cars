@@ -1,13 +1,13 @@
 package transport;
 
-public class Bus extends Transport implements Competing{
+public class PassengerCar extends Transport implements Competing {
     String [] lapTime = {"2","2.5","3"};
     String [] maxSpeed = {"150","160","170"};
-    public Bus(String brand, String model, int engineVolume) {
+    public PassengerCar(String brand, String model, int engineVolume) {
         super(brand, model, engineVolume);
     }
 
-    public Bus() {
+    public PassengerCar() {
     }
 
     @Override
@@ -19,7 +19,6 @@ public class Bus extends Transport implements Competing{
     @Override
     public void stopDrive() {
         System.out.println("Останавливаюсь, выключаю зажигание.");
-
     }
 
     @Override
@@ -32,6 +31,7 @@ public class Bus extends Transport implements Competing{
     public String[] getBestLapTime() {
         System.out.println(" Лучшее время курга " + lapTime );
         return new String[0];
+
     }
 
     @Override
@@ -39,23 +39,4 @@ public class Bus extends Transport implements Competing{
         System.out.println(" Лучшее время курга " + maxSpeed );
         return new String[0];
     }
-    //   public Bus(String brand, String model, int year, String country, String color, double maxSpeed) {
- //       super(brand, model, year, country, color, maxSpeed);
- //   }
-
- //   public Bus() {
-//    }
-
-//    @Override
- //   public String toString() {
- //       return "Bus{" +
- //               "brand='" + brand + '\'' +
-//                ", model='" + model + '\'' +
-//                ", year=" + year +
-//                ", country='" + country + '\'' +
-//                ", color='" + color + '\'' +
-//                ", maxSpeed=" + maxSpeed +
-//                '}';
-//    }
-
 }
