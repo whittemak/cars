@@ -1,10 +1,22 @@
 package transport;
 
 public class Truck extends Transport implements Competing{
+    private LoadCapacity loadCapacity;
     String [] lapTime = {"2","2.5","3"};
     String [] maxSpeed = {"150","160","170"};
-    public Truck(String brand, String model, int engineVolume) {
+
+    public LoadCapacity getLoadCapacity() {
+        return loadCapacity;
+    }
+
+    public void setLoadCapacity(LoadCapacity loadCapacity) {
+        this.loadCapacity = loadCapacity;
+    }
+
+    public Truck(String brand, String model, int engineVolume, LoadCapacity loadCapacity) {
         super(brand, model, engineVolume);
+        this.loadCapacity = loadCapacity;
+
     }
 
     public Truck() {
@@ -21,6 +33,17 @@ public class Truck extends Transport implements Competing{
         System.out.println("Останавливаюсь, выключаю зажигание.");
 
     }
+
+    @Override
+    public void printType() {
+        String LoadCapacity = null;
+        if (LoadCapacity == null){
+            System.out.println("Данных по авто недостаточно");
+        } else {
+            System.out.println("Грузополъемность: " + LoadCapacity);
+        }
+    }
+
 
     @Override
     public void pitStop() {

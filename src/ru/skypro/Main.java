@@ -1,9 +1,6 @@
 package ru.skypro;
 
-import transport.Bus;
-import transport.Driver;
-import transport.PassengerCar;
-import transport.Truck;
+import transport.*;
 //import transport.Car;
 
 import java.time.LocalDate;
@@ -11,18 +8,18 @@ import java.time.LocalDate;
 public class Main {
 
     public static void main(String[] args) {
-        PassengerCar bmw = new PassengerCar("bmw", "z8", 3);
-        PassengerCar porshe = new PassengerCar("porshe", "a1", 4);
-        PassengerCar kia = new PassengerCar("kia", "k5", (int)2.5);
-        PassengerCar audi = new PassengerCar("audi", "a8", 2);
-        Bus volvo = new Bus("volvo", "b1", 3);
-        Bus mercedes = new Bus("mercedes", "x1", 4);
-        Bus hyundai = new Bus("hyundai", "q23", (int)3.5);
-        Bus vw = new Bus("vw", "r54", 5);
-        Truck kamaz = new Truck("kamaz", "2233", 5);
-        Truck zil = new Truck("zil", "123", 4);
-        Truck mers = new Truck("mercedes", "666", 5);
-        Truck bekha = new Truck("bmw", "999", 6);
+        PassengerCar bmw = new PassengerCar("bmw", "z8", 3, BodyType.SEDAN);
+        PassengerCar porshe = new PassengerCar("porshe", "a1", 4, BodyType.COUPE);
+        PassengerCar kia = new PassengerCar("kia", "k5", (int)2.5, BodyType.SEDAN);
+        PassengerCar audi = new PassengerCar("audi", "a8", 2, BodyType.HATCHBACK);
+        Bus volvo = new Bus("volvo", "b1", 3, Capacity.EXTRA_LARGE);
+        Bus mercedes = new Bus("mercedes", "x1", 4, Capacity.MEDIUM);
+        Bus hyundai = new Bus("hyundai", "q23", (int)3.5, Capacity.EXTRA_SMALL);
+        Bus vw = new Bus("vw", "r54", 5, Capacity.LARGE);
+        Truck kamaz = new Truck("kamaz", "2233", 5, LoadCapacity.N1);
+        Truck zil = new Truck("zil", "123", 4, LoadCapacity.N2);
+        Truck mers = new Truck("mercedes", "666", 5, LoadCapacity.N3);
+        Truck bekha = new Truck("bmw", "999", 6, LoadCapacity.N1);
         Driver<PassengerCar> first = new Driver<>("Иванов Иван Иванович", true, 20, bmw) {
             @Override
             public void startDriving() {

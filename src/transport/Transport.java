@@ -81,4 +81,5 @@ public abstract class Transport {
  //   public void setMaxSpeed(double maxSpeed) {
 //        this.maxSpeed = maxSpeed;
 //   }
+    public abstract void printType();
 }

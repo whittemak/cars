@@ -1,10 +1,22 @@
 package transport;
 
 public class PassengerCar extends Transport implements Competing {
+    private BodyType bodyType;
     String [] lapTime = {"2","2.5","3"};
     String [] maxSpeed = {"150","160","170"};
-    public PassengerCar(String brand, String model, int engineVolume) {
+
+    public BodyType getBodyType() {
+        return bodyType;
+    }
+
+    public void setBodyType(BodyType bodyType) {
+        this.bodyType = bodyType;
+    }
+
+    public PassengerCar(String brand, String model, int engineVolume, BodyType bodyType) {
         super(brand, model, engineVolume);
+        this.bodyType = bodyType;
+
     }
 
     public PassengerCar() {
@@ -19,6 +31,16 @@ public class PassengerCar extends Transport implements Competing {
     @Override
     public void stopDrive() {
         System.out.println("Останавливаюсь, выключаю зажигание.");
+    }
+
+    @Override
+    public void printType() {
+        String BodyType = null;
+        if (BodyType == null){
+            System.out.println("Данных по авто недостаточно");
+        } else {
+            System.out.println("Тип авто: " + BodyType);
+        }
     }
 
     @Override
