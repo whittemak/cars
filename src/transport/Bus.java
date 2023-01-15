@@ -44,6 +44,11 @@ public class Bus extends Transport implements Competing{
         }
     }
 
+    @Override
+    public void getDiagnosed() {
+       throw new UnsupportedOperationException("Автобус " + getBrand() + "," + getModel() + " не проходит диагностику");
+    }
+
 
     @Override
     public void pitStop() {

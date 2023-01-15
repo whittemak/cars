@@ -44,6 +44,12 @@ public class PassengerCar extends Transport implements Competing {
     }
 
     @Override
+    public void getDiagnosed() {
+        System.out.println("Проходит диагностику");
+
+    }
+
+    @Override
     public void pitStop() {
         System.out.println("Останавливаюсь на дозаправку");
 
