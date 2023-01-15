@@ -4,6 +4,8 @@ import transport.*;
 //import transport.Car;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
 
@@ -60,7 +62,42 @@ public class Main {
 //        System.out.println(first);
 //        System.out.println(second);
 //        System.out.println(third);
-    }
+        List<Transport> allVehicles = new ArrayList<>();
+        allVehicles.add(bmw);
+        allVehicles.add(porshe);
+        allVehicles.add(kia);
+        allVehicles.add(audi);
+        allVehicles.add(volvo);
+        allVehicles.add(mercedes);
+        allVehicles.add(hyundai);
+        allVehicles.add(vw);
+        allVehicles.add(kamaz);
+        allVehicles.add(zil);
+        allVehicles.add(mers);
+        allVehicles.add(bekha);
+        Driver<PassengerCar> ivan = new Driver() {
+            @Override
+            public void startDriving() {
 
+            }
 
+            @Override
+            public void stopDriving() {
+
+            }
+
+            @Override
+            public void refuel() {
+
+            }
+
+            @Override
+            public void printDriveVehicle() {
+
+            }
+        };
+        List<Driver> drivers = new ArrayList<>();
+        drivers.add(ivan);
+        System.out.println("Водитель " + bmw.Driver.getName() + " механики" + bmw.getMechanics());
     }
+}

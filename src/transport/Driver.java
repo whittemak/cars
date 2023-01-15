@@ -13,6 +13,10 @@ public abstract class Driver<T extends Transport> {
         this.vehicle = vehicle;
     }
 
+    public Driver() {
+
+    }
+
     public String getName() {
         return name;
     }

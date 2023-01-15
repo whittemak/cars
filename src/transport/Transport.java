@@ -1,13 +1,34 @@
 package transport;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public abstract class Transport {
+    public Object Driver;
     protected    String brand;
     protected   String model;
     protected int engineVolume;
+    public List<Mechanic> mechanics;
+    public List<Driver> drivers;
 //    protected   int year;
 //    protected   String country;
 //    protected String color;
 //    protected double maxSpeed;
+
+
+    public Object getDriver() {
+        return Driver;
+    }
+
+    public List<Mechanic> getMechanics() {
+        return mechanics;
+    }
+
+    public List<transport.Driver> getDrivers() {
+        return drivers;
+    }
+
+
 
     public Transport(String brand, String model, int engineVolume) {
         if (brand != null & !brand.isEmpty()) {
@@ -93,4 +114,6 @@ public abstract class Transport {
             }
         }
     }
+
+
 }
