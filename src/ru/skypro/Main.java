@@ -5,8 +5,7 @@ import transport.exeptions.DiagnosticFailedException;
 //import transport.Car;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class Main {
 
@@ -86,6 +85,7 @@ public class Main {
         bekha.addMechanic(mechanic1);
 
         List<Transport> allVehicles = new ArrayList<>();
+
         allVehicles.add(bmw);
         allVehicles.add(porshe);
         allVehicles.add(kia);
@@ -100,6 +100,7 @@ public class Main {
         allVehicles.add(bekha);
         for (Transport transport: allVehicles){
             System.out.println(transport + " водитель " + transport.getDriver() + " механики " + transport.getMechanics());
+
 
         }
         Driver<PassengerCar> ivan = new Driver() {
@@ -130,6 +131,11 @@ public class Main {
         sto.addTransport(bmw);
         sto.addTransport(audi);
         sto.doDiagnostics();
+
+        Map<Transport, List<Mechanic>> transportMechanicMap = new HashMap<>();
+        for (Transport transport: allVehicles ){
+            transportMechanicMap.put(transport, allVehicles.getMechanics());
+        }
 
     }
 

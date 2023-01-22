@@ -3,7 +3,9 @@ package transport;
 import transport.exeptions.DiagnosticFailedException;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public abstract class Transport {
     public Object Driver;
@@ -17,17 +19,19 @@ public abstract class Transport {
 //    protected String color;
 //    protected double maxSpeed;
     public void addMechanic(Mechanic mechanic){
-        mechanics.add(mechanic);
+        if (!mechanics.contains(mechanic)) {
+            mechanics.add(mechanic);
+        }
     }
-
+    public List<Mechanic> getMechanics() {
+        return mechanics;
+    }
 
     public Object getDriver() {
         return Driver;
     }
 
-    public List<Mechanic> getMechanics() {
-        return mechanics;
-    }
+
 
     public List<transport.Driver> getDrivers() {
         return drivers;
