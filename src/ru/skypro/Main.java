@@ -132,11 +132,26 @@ public class Main {
         sto.addTransport(audi);
         sto.doDiagnostics();
 
-        Map<Transport, List<Mechanic>> transportMechanicMap = new HashMap<>();
-        for (Transport transport: allVehicles ){
-            transportMechanicMap.put(transport, allVehicles.getMechanics());
+ //       Map<Transport, List<Mechanic>> transportMechanicMap = new HashMap<>();
+   //     for (Transport transport: allVehicles ){
+ //           transportMechanicMap.put(transport, allVehicles.getMechanics());
         }
+        public static void printDrivers(){
+        DriverB driver1 = new DriverB("Ivan", true,10, new PassengerCar());
+        DriverC driver2 = new DriverC("Petr", true,15, new Truck());
+        DriverD driver3 = new DriverD("Vasiliy", true,20, new Bus());
+        Set<Driver> drivers = new HashSet<>();
+        drivers.add(driver1);
+        drivers.add(driver2);
+        drivers.add(driver3);
+        Iterator<Driver> iterator = drivers.iterator();
+        while (iterator.hasNext()){
+            System.out.println(iterator.next());
+        }
+        printDrivers();
+    }
+
 
     }
 
-}
+//}

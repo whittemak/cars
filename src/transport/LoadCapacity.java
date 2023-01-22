@@ -9,7 +9,7 @@ public enum LoadCapacity { N1(0D, 3.5), N2(3.5, 12D), N3(12D, 30);
         this.to = to;
     }
 
-    public static double getFrom() {
+    public  double getFrom() {
         return from;
     }
 
