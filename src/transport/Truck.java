@@ -1,5 +1,7 @@
 package transport;
 
+import transport.exeptions.DiagnosticFailedException;
+
 public class Truck extends Transport implements Competing{
     private LoadCapacity loadCapacity;
     String [] lapTime = {"2","2.5","3"};
@@ -45,8 +47,12 @@ public class Truck extends Transport implements Competing{
     }
 
     @Override
-    public void getDiagnosed() {
-        System.out.println("Проходит диагностику");
+    public boolean getDiagnosed() throws DiagnosticFailedException {
+        if (getDriver() != null){
+            return true;
+        } else {
+            throw new DiagnosticFailedException("Необходимо указать тип прав");
+        }
     }
 
 

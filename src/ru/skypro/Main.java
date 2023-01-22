@@ -1,6 +1,7 @@
 package ru.skypro;
 
 import transport.*;
+import transport.exeptions.DiagnosticFailedException;
 //import transport.Car;
 
 import java.time.LocalDate;
@@ -62,6 +63,11 @@ public class Main {
 //        System.out.println(first);
 //        System.out.println(second);
 //        System.out.println(third);
+        try {
+            bmw.getDiagnosed();
+        } catch (DiagnosticFailedException e) {
+            System.out.println("Ошибка диагностики");
+        }
         List<Transport> allVehicles = new ArrayList<>();
         allVehicles.add(bmw);
         allVehicles.add(porshe);
@@ -96,8 +102,10 @@ public class Main {
 
             }
         };
+
         List<Driver> drivers = new ArrayList<>();
         drivers.add(ivan);
-        System.out.println("Водитель " + bmw.Driver.getName() + " механики" + bmw.getMechanics());
+ //       System.out.println("Водитель " + bmw.Driver.getName() + " механики" + bmw.getMechanics());
     }
+
 }

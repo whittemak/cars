@@ -1,5 +1,7 @@
 package transport;
 
+import transport.exeptions.DiagnosticFailedException;
+
 public class Bus extends Transport implements Competing{
     private Capacity capacity;
     String [] lapTime = {"2","2.5","3"};
@@ -45,8 +47,8 @@ public class Bus extends Transport implements Competing{
     }
 
     @Override
-    public void getDiagnosed() {
-       throw new UnsupportedOperationException("Автобус " + getBrand() + "," + getModel() + " не проходит диагностику");
+    public boolean getDiagnosed() throws DiagnosticFailedException {
+        return false;
     }
 
 

@@ -1,5 +1,7 @@
 package transport;
 
+import transport.exeptions.DiagnosticFailedException;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -103,17 +105,8 @@ public abstract class Transport {
 //        this.maxSpeed = maxSpeed;
 //   }
     public abstract void printType();
-    public abstract void getDiagnosed();
-    public static void checkDiagnostic(Transport... transports){
-        for (Transport transport: transports){
-            try {
-                transport.getDiagnosed();
-            } catch (UnsupportedOperationException e){
-                System.out.println( "Ошибка");
-                System.out.println(e.getMessage());
-            }
-        }
-    }
+    public abstract boolean getDiagnosed() throws DiagnosticFailedException;
+
 
 
 }
