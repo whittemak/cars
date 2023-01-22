@@ -10,12 +10,15 @@ public abstract class Transport {
     protected    String brand;
     protected   String model;
     protected int engineVolume;
-    public List<Mechanic> mechanics;
+    public List<Mechanic> mechanics = new ArrayList<>();
     public List<Driver> drivers;
 //    protected   int year;
 //    protected   String country;
 //    protected String color;
 //    protected double maxSpeed;
+    public void addMechanic(Mechanic mechanic){
+        mechanics.add(mechanic);
+    }
 
 
     public Object getDriver() {

@@ -17,6 +17,16 @@ public abstract class Driver<T extends Transport> {
 
     }
 
+    @Override
+    public String toString() {
+        return "Driver{" +
+                "name='" + name + '\'' +
+                ", driverHasLisence=" + driverHasLisence +
+                ", experience=" + experience +
+                ", vehicle=" + vehicle +
+                '}';
+    }
+
     public String getName() {
         return name;
     }

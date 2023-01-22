@@ -68,6 +68,23 @@ public class Main {
         } catch (DiagnosticFailedException e) {
             System.out.println("Ошибка диагностики");
         }
+
+        Mechanic mechanic1 = new Mechanic("Иван", "Иванов", "компания1", TransportType.ALL);
+        Mechanic mechanic2 = new Mechanic("Петр", "Петров", "компания2", TransportType.BUS);
+        Mechanic mechanic3 = new Mechanic("Сергей", "Сергеев", "компания3", TransportType.PASSENGER_CAR);
+        bmw.addMechanic(mechanic1);
+        porshe.addMechanic(mechanic1);
+        kia.addMechanic(mechanic1);
+        audi.addMechanic(mechanic1);
+        volvo.addMechanic(mechanic2);
+        mercedes.addMechanic(mechanic2);
+        hyundai.addMechanic(mechanic2);
+        vw.addMechanic(mechanic2);
+        kamaz.addMechanic(mechanic1);
+        zil.addMechanic(mechanic1);
+        mers.addMechanic(mechanic1);
+        bekha.addMechanic(mechanic1);
+
         List<Transport> allVehicles = new ArrayList<>();
         allVehicles.add(bmw);
         allVehicles.add(porshe);
@@ -81,6 +98,10 @@ public class Main {
         allVehicles.add(zil);
         allVehicles.add(mers);
         allVehicles.add(bekha);
+        for (Transport transport: allVehicles){
+            System.out.println(transport + " водитель " + transport.getDriver() + " механики " + transport.getMechanics());
+
+        }
         Driver<PassengerCar> ivan = new Driver() {
             @Override
             public void startDriving() {
@@ -105,7 +126,11 @@ public class Main {
 
         List<Driver> drivers = new ArrayList<>();
         drivers.add(ivan);
- //       System.out.println("Водитель " + bmw.Driver.getName() + " механики" + bmw.getMechanics());
+        DiagnosticStation sto = new DiagnosticStation();
+        sto.addTransport(bmw);
+        sto.addTransport(audi);
+        sto.doDiagnostics();
+
     }
 
 }
