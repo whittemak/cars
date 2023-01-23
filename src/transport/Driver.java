@@ -1,5 +1,7 @@
 package transport;
 
+import transport.exeptions.NoDriverLicenseException;
+
 import java.util.Objects;
 
 public abstract class Driver<T extends Transport> {
@@ -8,11 +10,15 @@ public abstract class Driver<T extends Transport> {
     private int experience;
     private T vehicle;
 
-    public Driver(String name, boolean driverHasLisence, int experience, T vehicle) {
+    public Driver(String name, boolean driverHasLisence, int experience, T vehicle) throws NoDriverLicenseException {
         this.name = name;
-        this.driverHasLisence = driverHasLisence;
-        this.experience = experience;
-        this.vehicle = vehicle;
+        if (driverHasLisence == false) {
+            throw new NoDriverLicenseException(" Нет прав");
+        } else {
+            this.driverHasLisence = driverHasLisence;
+            this.experience = experience;
+            this.vehicle = vehicle;
+        }
     }
 
     public Driver() {
