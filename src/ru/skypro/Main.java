@@ -132,9 +132,9 @@ public class Main {
         sto.addTransport(audi);
         sto.doDiagnostics();
 
- //       Map<Transport, List<Mechanic>> transportMechanicMap = new HashMap<>();
-   //     for (Transport transport: allVehicles ){
- //           transportMechanicMap.put(transport, allVehicles.getMechanics());
+       Map<Transport, List<Mechanic>> transportMechanicMap = new HashMap<>();
+       for (Transport transport: allVehicles ){
+           transportMechanicMap.put(transport, allVehicles.getMechanics());
         }
         public static void printDrivers(){
         DriverB driver1 = new DriverB("Ivan", true,10, new PassengerCar());
